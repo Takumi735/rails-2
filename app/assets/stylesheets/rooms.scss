@@ -1,0 +1,66 @@
+.index-container {
+    padding: 20px 50px;
+  }
+  
+.index-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+.index-content {
+    width: 100%;
+  }
+  
+.index-content th, .index-content td {
+    padding: 10px;
+  }
+  
+.index-content th {
+    font-weight: bold;
+  }
+  
+.index-content .room-image {
+    max-width: 100px; 
+    height: auto;
+  }
+  
+.index-content thead tr {
+    border-bottom: solid;
+}
+
+.index-content a {
+  text-decoration: none;
+}
+
+.SeachRoomsContainer {
+  height: 125px;
+  background-color: #dfe2e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.room-container {
+  padding: 40px 32px;
+}
+
+.search-result {
+  font-size: 1.2rem;
+}
+
+.back-text {
+  padding: 20px 50px;
+  text-decoration: none;
+}
+
+.room-text {
+  padding: 40px 24px;
+  width: 100%;
+  margin: 0px 30px;
+}
+
+.room-text-container {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,31 @@
+<div class=account-container>
+
+  <h2 class=account-title>設定</h2>
+
+    <div class="account-content">
+    <table class="account-section1">
+      <tr>
+        <th><%= link_to "アカウント", account_path, class: "text-decoration-none" %></th>
+      </tr>
+      <tr>
+        <th><%= link_to "プロフィール", profile_path, class: "text-decoration-none" %></th>
+      </tr>
+    </table>
+    <table class="account-section2">
+      <tr>
+        <th>アカウント</th>
+        <th><%= link_to "編集", edit_user_registration_path, class: "text-decoration-none" %></th>
+      </tr>
+      <tr>
+        <td>メールアドレス</td>
+        <td><%= @user.email %></td>
+      </tr>
+      <tr>
+        <td>パスワード</td>
+        <td>*********</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</div>

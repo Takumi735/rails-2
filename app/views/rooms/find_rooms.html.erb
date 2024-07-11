@@ -1,0 +1,29 @@
+<div class="SeachRoomsContainer">
+ <%= form_with url: search_path, method: :get, local: true do %>
+        <%= text_field_tag :area, params[:area], placeholder: "エリア名を入力", style: "width: 285px; height: 45px;" %>
+        <%= text_field_tag :search, params[:search], placeholder: "キーワード名を入力", style: "width: 285px; height: 45px;" %>
+        <%= submit_tag "検索", style: "width: 100px; height: 45px;" %>
+  <% end %>
+</div>
+
+<div class= room-container>
+  <p class=search-result><%= @rooms.count %> 件が見つかりました</p>
+
+<div class="row">
+  <% @rooms.each do |room| %>
+    <div class="col-md-4 mb-4">
+      <div class="card" style="width: 100%;">
+        <% if room.image.present? %>
+          <%= image_tag room.image.url, alt: room.name, class: "room-image" %>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= room.name %></h5>
+          <p class="card-text"><%= room.address %></p>
+          <p class="card-text"><%= room.details %></p>
+          <p class="card-text"><%= number_to_currency(room.price, unit: "¥", precision: 0, format: "%u%n") %>〜</p>
+          <a href="<%= room_path(room) %>" class="btn btn-primary">詳細はこちら</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

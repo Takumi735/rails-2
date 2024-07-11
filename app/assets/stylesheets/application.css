@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .Navber {
+    padding: 20px 50px;
+    background-color: rgb(10, 38, 81);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header01 {
+    padding: 20px 50px;
+    background-color: rgb(10, 38, 81);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .avatar-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .user-name {
+    color: aliceblue;
+  }
+
+  .dropdown-toggle::after {
+    color: aliceblue;
+  }

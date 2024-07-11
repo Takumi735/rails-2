@@ -1,0 +1,40 @@
+<div class=account-container>
+
+  <h2 class=account-title>設定</h2>
+
+    <div class="account-content">
+    <table class="account-section1">
+      <tr>
+        <th><%= link_to "アカウント", account_path, class: "text-decoration-none" %></th>
+      </tr>
+      <tr>
+        <th><%= link_to "プロフィール", profile_path, class: "text-decoration-none" %></th>
+      </tr>
+    </table>
+
+    <table class="account-section2">
+      <tr>
+        <th>プロフィール</th>
+        <th><%= link_to "編集", edit_users_profile_path,class: "text-decoration-none" %></th>
+      </tr>
+    <tbody>
+      <tr>
+        <th>アイコン</th>
+          <td><% if current_user.avatar? %>
+              <%= image_tag current_user.avatar.url, class: "avatar-image" %>
+            <% else %>
+              <%= image_tag "default_avatar.png", class: "avatar-image" %>
+            <% end %>    
+          </td>
+      </tr>
+      <tr>
+        <th>名前</th>
+        <td><%= @user.name %></td>
+      </tr>
+      <tr>
+        <th>自己紹介</th>
+        <td><%= @user.bio %></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
