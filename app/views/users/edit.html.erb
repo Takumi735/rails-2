@@ -1,0 +1,21 @@
+<%= form_with(model: @user, url: users_profile_path, method: :put ) do |f| %>
+
+  <div class="field">
+    <%= f.label :名前 %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">   
+    <%= f.label :自己紹介 %><br />
+    <%= f.text_area :bio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :アイコン %><br />
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存" %>
+  </div>
+<% end %>

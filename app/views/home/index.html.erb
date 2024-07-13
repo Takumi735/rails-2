@@ -1,0 +1,27 @@
+<section class="FirstView_title">
+    <h1 class= "FirstView_text">
+        Potepan Shareで<br>
+        まだ体験したことのない<br>
+        旅をしよう
+    </h1>
+
+      <div class="FirstView_Serch" >
+      <%= form_with url: search_path, method: :get, local: true do %>
+        <form>
+            <%= text_field_tag :area, params[:area], placeholder: "エリア名を入力", class: "form-control me-2", style: "width: 640px; height: 58px;" %>
+            <%= submit_tag "検索", class: "btn btn-outline-success", style: "width: 640px; height: 58px;" %>
+        </form>
+      <% end %>
+    </div>
+</section>
+
+<section class= "Section2">
+    <h2 class=FirstView_area>おすすめのエリア</h2>
+
+    <div class="FirstView_img">
+        <%= link_to(image_tag("tokyo.jpg", alt: "東京", class: 'Tokyo-logo'), search_path(search: "東京")) %>
+        <%= link_to(image_tag("osaka.jpg", alt: "大阪", class: 'Osaka-logo'), search_path(search: "大阪")) %>
+        <%= link_to(image_tag("kyoto.jpg", alt: "京都", class: 'Kyoto-logo'), search_path(search: "京都")) %>
+        <%= link_to(image_tag("sapporo.jpg", alt: "札幌", class: 'Sapporo-logo'), search_path(search: "札幌")) %>
+    </div>
+</section>  

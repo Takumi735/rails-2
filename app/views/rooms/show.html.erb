@@ -1,0 +1,42 @@
+<div class="SeachRoomsContainer">
+ <%= form_with url: search_path, method: :get, local: true do %>
+        <%= text_field_tag :area, params[:area], placeholder: "エリア名を入力", style: "width: 285px; height: 45px;" %>
+        <%= text_field_tag :search, params[:search], placeholder: "キーワード名を入力", style: "width: 285px; height: 45px;" %>
+        <%= submit_tag "検索", style: "width: 100px; height: 45px;" %>
+  <% end %>
+</div>
+<p class="back-text"><%= link_to "戻る", :back %></p>
+<div class="room-text-container">
+  <% if @room.image.present? %>
+    <%= image_tag @room.image.url, alt: "部屋の画像" %>
+  <% else %>
+    <div class="no-image-placeholder">
+      <p>画像はありません</p>
+    </div>
+  <% end %>
+
+  <div class="room-text">
+  <h1><%= @room.name %></h1>
+  <p><%= @room.address %></p>
+  <p><%= @room.details %></p>
+<p><%= number_to_currency(@room.price, unit: "¥", precision: 0, format: "%u%n") %>〜</p>
+<div>
+  <%= form_with(model: [@room, @room.reservations.build], url: confirm_room_reservations_path(@room), local: true) do |form| %>
+
+    <%= form.label :check_in, "チェックイン日" %>
+    <%= form.text_field :check_in, class: "datepicker", placeholder: "YYYY-MM-DD" %>
+
+    <%= form.label :check_out, "チェックアウト日" %>
+    <%= form.text_field :check_out, class: "datepicker", placeholder: "YYYY-MM-DD" %>
+
+    <div class="col-md-6">
+      <%= form.label :number_of_guests, "人数" %>
+      <%= form.number_field :number_of_guests, class: "form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "予約する" %>
+    </div>
+  <% end %>
+</div>
+</div>

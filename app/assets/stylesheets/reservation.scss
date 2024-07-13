@@ -1,0 +1,32 @@
+.reservations-container {
+    padding: 20px 50px;
+  }
+  
+.reservations-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+.reservations-content {
+    width: 100%;
+  }
+  
+.reservations-content th, .reservations-content td {
+    padding: 10px;
+  }
+  
+.reservations-content th {
+    font-weight: bold;
+  }
+  
+.reservations-content .room-image {
+    max-width: 100px; 
+    height: auto;
+  }
+  
+.reservations-content thead tr {
+    border-bottom: solid;
+}
+.reservations-content a {
+  text-decoration: none;
+}

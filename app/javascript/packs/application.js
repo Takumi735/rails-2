@@ -11,3 +11,21 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import "bootstrap"
+import "../stylesheets/application"
+
+// Import necessary libraries for Bootstrap Material Datetimepicker
+import $ from "jquery"
+import moment from "moment"
+import "bootstrap-material-datetimepicker"
+
+// Initialize datepickers
+$(document).on("turbolinks:load", function () {
+  $(".datepicker").bootstrapMaterialDatePicker({
+    format: "YYYY-MM-DD",
+    clearButton: true,
+    weekStart: 1,
+    time: false,
+  });
+});

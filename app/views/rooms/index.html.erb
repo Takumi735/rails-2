@@ -1,0 +1,32 @@
+<div class="index-container">
+  <h2 class="index-title">登録済み一覧</h2>
+
+  <table class="index-content">
+    <thead>
+      <tr>
+        <th>画像</th>
+        <th>施設名</th>
+        <th>紹介文</th>
+        <th>料金</th>
+        <th>作成日</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @rooms.each do |room| %>
+        <tr>
+          <td>
+            <% if room.image.present? %>
+              <%= image_tag room.image.url, alt: room.name, class: "room-image" %>
+            <% else %>
+              <p>画像がありません</p>
+            <% end %>
+          </td>
+          <td><%= link_to room.name, room %></td>
+          <td><%= room.details %></td>
+          <td><%= number_to_currency(room.price, unit: "￥", precision: 0, format: "%u%n") %></td>
+          <td><%= room.created_at.to_s(:datetime_jp) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

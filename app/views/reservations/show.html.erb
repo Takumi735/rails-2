@@ -1,0 +1,35 @@
+<div class="container py-4">
+  <h1 class="reservation mb-4">予約内容の確認</h1>
+
+  <div class="form-content p-6">
+    <div class="row mb-2">
+      <div class="col-3"><strong>チェックイン</strong></div>
+      <div class="col-3 text-right"><%= @reservation.check_in.strftime('%Y/%m/%d') %></div>
+    </div>
+    <div class="row mb-2">
+      <div class="col-3"><strong>チェックアウト</strong></div>
+      <div class="col-3 text-right"><%= @reservation.check_out.strftime('%Y/%m/%d') %></div>
+    </div>
+    <div class="row mb-2">
+      <div class="col-3"><strong>日数</strong></div>
+      <div class="col-3 text-right"><%= @reservation.total_days %></div>
+    </div>
+    <div class="row mb-2">
+      <div class="col-3"><strong>人数</strong></div>
+      <div class="col-3 text-right"><%= @reservation.number_of_guests %></div>
+    </div>
+    <div class="row mb-2">
+      <div class="col-3"><strong>お支払い金額</strong></div>
+      <div class="col-3 text-right"><%= number_to_currency(@reservation.total_price, unit: "¥", precision: 0, format: "%u%n") %></div>
+    </div>
+    <p class="mt-4">上記内容で正しければ「確定」ボタンを押してください。</p>
+    
+    <div class="mb-2">
+        <button type="button" class="btn btn-primary btn-block">予約を確定</button>
+    </div>
+    <div>
+        <button type="button" class="btn btn-secondary btn-block">キャンセル</button>
+    </div>
+  </div>
+</div>
+
